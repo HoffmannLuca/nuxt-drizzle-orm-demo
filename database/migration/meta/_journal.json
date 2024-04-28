@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714306797932,
+      "tag": "0000_create_projects_table",
+      "breakpoints": true
+    }
+  ]
+}

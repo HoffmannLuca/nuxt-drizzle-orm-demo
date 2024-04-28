@@ -5,6 +5,12 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:generate-custom": "drizzle-kit generate:pg --custom",
+    "db:push": "drizzle-kit push:pg",
+    "db:up": "drizzle-kit up:pg",
+    "db:drop": "drizzle-kit drop",
+    "db:studio": "drizzle-kit studio",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -12,11 +18,14 @@
   "dependencies": {
     "drizzle-orm": "^0.29.5",
     "nuxt": "^3.11.2",
+    "pg": "^8.11.5",
+    "postgres": "^3.4.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "@types/pg": "^8.11.5",
     "drizzle-kit": "^0.20.17"
   }
 }
