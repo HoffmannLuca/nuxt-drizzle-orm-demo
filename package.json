@@ -16,7 +16,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "drizzle-orm": "^0.29.5",
+    "drizzle-orm": "^0.30.9",
     "nuxt": "^3.11.2",
     "pg": "^8.11.5",
     "postgres": "^3.4.4",
