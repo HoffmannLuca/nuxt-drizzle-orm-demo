@@ -1,14 +1,14 @@
-
+import drizzleConfig from "~/drizzle.config";
 import { drizzle } from "drizzle-orm/node-postgres";
 import pg from "pg";
 
 const client = new pg.Client({
-    host: "127.0.0.1",
-    port: 5432,
-    user: "root",
-    password: "root",
-    database: "dev-db",
-  });
+    database: drizzleConfig.dbCredentials.database,
+    host: drizzleConfig.dbCredentials.host,
+    port: drizzleConfig.dbCredentials.port,
+    user: drizzleConfig.dbCredentials.user,
+    password: drizzleConfig.dbCredentials.password,
+});
 
 client.connect();  
 export default drizzle(client);
