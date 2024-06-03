@@ -19,3 +19,9 @@ docker run -p 127.0.0.1:5432:5432 --name local-postgres -e POSTGRES_USER=root -e
 npm i mysql2
 docker run -p 127.0.0.1:3306:3306  --name local-mariaDB -e MARIADB_ROOT_PASSWORD=root -d mariadb:latest
 ```
+
+## Lucia Auth
+```bash
+npm install lucia
+npm install @lucia-auth/adapter-drizzle
+```
