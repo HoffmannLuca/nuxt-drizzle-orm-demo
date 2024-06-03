@@ -1,9 +1,9 @@
 import type { Config } from "drizzle-kit";
 
 export default {
-  schema: "./database/schema/*",
+  schema: "./database/schema.ts",
   out: "./database/migration",
-  driver: 'pg',
+  dialect: "postgresql",
   dbCredentials: {
     database: String(process.env.DB_NAME),
     host: String(process.env.DB_HOST),

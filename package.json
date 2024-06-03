@@ -28,6 +28,6 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@types/pg": "^8.11.5",
-    "drizzle-kit": "^0.20.17"
+    "drizzle-kit": "^0.22.1"
   }
 }
