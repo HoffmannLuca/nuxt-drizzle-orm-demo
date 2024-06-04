@@ -1,4 +1,4 @@
-import { projects } from "~/database/schema/project";
+import { projects } from "~/database/schema";
 import db from '~/database/client'
 import { eq } from "drizzle-orm";
 

@@ -14,3 +14,9 @@ export const sessionTable = pgTable("session", {
 		mode: "date"
 	}).notNull()
 });
+
+export const projects = pgTable('projects', {
+  id: serial('id').primaryKey(),
+  title: text('title'),
+  description: text('description'),
+});
