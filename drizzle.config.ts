@@ -1,14 +1,15 @@
-import type { Config } from "drizzle-kit";
+import { defineConfig } from "drizzle-kit"
 
-export default {
+export default defineConfig({
   schema: "./database/schema.ts",
   out: "./database/migration",
   dialect: "postgresql",
   dbCredentials: {
-    database: String(process.env.DB_NAME),
-    host: String(process.env.DB_HOST),
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    url: process.env.DATABASE_URL || 'postgresql://root:root@localhost:5432/dev-db',
+    ssl: process.env.DATABASE_URL ? true : false
+  },
+  migrations: {
+      table: "migrations",
+      schema: "public"
   }
-} satisfies Config;
+});

@@ -5,8 +5,9 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "db:generate": "drizzle-kit generate",
-    "db:generate-custom": "drizzle-kit generate --custom",
+    "db:generate": "drizzle-kit generate --name",
+    "db:generate-custom": "drizzle-kit generate --custom --name",
+    "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:up": "drizzle-kit up",
     "db:drop": "drizzle-kit drop",
