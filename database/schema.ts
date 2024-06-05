@@ -1,20 +1,35 @@
 import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { relations } from "drizzle-orm/relations";
 
-export const userTable = pgTable("user", {
+// User
+export const user = pgTable("user", {
 	id: text("id").primaryKey()
 });
 
-export const sessionTable = pgTable("session", {
+export const userRelations = relations(user, ({many}) => ({
+	sessions: many(sessions),
+}));
+
+// Sessions
+export const sessions = pgTable("session", {
 	id: text("id").primaryKey(),
 	userId: text("user_id")
 		.notNull()
-		.references(() => userTable.id),
+		.references(() => user.id),
 	expiresAt: timestamp("expires_at", {
 		withTimezone: true,
 		mode: "date"
 	}).notNull()
 });
 
+export const sessionRelations = relations(sessions, ({one}) => ({
+	user: one(user, {
+		fields: [sessions.userId],
+		references: [user.id]
+	}),
+}));
+
+// Projects
 export const projects = pgTable('projects', {
   id: serial('id').primaryKey(),
   title: text('title'),
