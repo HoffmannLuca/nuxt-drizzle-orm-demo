@@ -15,6 +15,13 @@
       "when": 1717532462664,
       "tag": "0001_projects",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1717849228328,
+      "tag": "0002_user_email_password",
+      "breakpoints": true
     }
   ]
 }
