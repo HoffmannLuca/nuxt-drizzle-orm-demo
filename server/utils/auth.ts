@@ -12,6 +12,12 @@ export const lucia = new Lucia(adapter, {
 			// set to `true` when using HTTPS
 			secure: !process.dev
 		}
+	},
+	getUserAttributes: (attributes) => {
+		return {
+			// attributes has the type of DatabaseUserAttributes
+			email: attributes.email
+		};
 	}
 });
 
@@ -19,5 +25,9 @@ export const lucia = new Lucia(adapter, {
 declare module "lucia" {
 	interface Register {
 		Lucia: typeof lucia;
+		DatabaseUserAttributes: DatabaseUserAttributes;
 	}
+}
+interface DatabaseUserAttributes {
+	email: string;
 }
